@@ -26,7 +26,7 @@ async function analyzeSentiment(text) {
     const response = await axios.post(
       'https://api-inference.huggingface.co/models/distilbert-base-uncased-finetuned-sst-2-english',
       { inputs: text },
-      { headers: { 'Authorization': 'Bearer YOUR_HF_API_KEY' } }
+      { headers: { 'Authorization': 'Bearer TOKEN_HUGGINGFACE' } }
     );
     return response.data[0][0].label;
   } catch (error) {
